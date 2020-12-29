@@ -1,0 +1,7 @@
+.text-input-wrap {
+    padding: 5px 0;
+    display: flex;
+}
+.text-input-wrap label {
+    width: 170px;
+}

@@ -18,7 +18,7 @@ const DeleteModal = ({ deltItem, onDeleteDone, closeMe }) => {
           </section>
           <footer className="modal-footer">
             <button
-              className="footer__button button--ok"
+              className="footer__button button--warn"
               onClick={() => {
                 onDeleteDone(deltItem.id);
               }}

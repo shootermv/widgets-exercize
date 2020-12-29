@@ -1,7 +1,7 @@
 :root {
   --primary-bgr: #4d3dd9;
   --ok: green;
-
+  --warn: #d9543d;
 }
 html,
 body {
@@ -31,6 +31,10 @@ form span, .error {
   color:red;
 }
 .button--ok {
-  background:green;
+  background: var(--ok);
+  color: #fff;
+}
+.button--warn {
+  background: var(--warn);
   color: #fff;
 }

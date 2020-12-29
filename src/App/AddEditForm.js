@@ -14,6 +14,7 @@ const AddEditForm = ({ editItem, onEditDone, onCancel }) => {
           .required("Required"),
         mnumber: Yup.number()
           .typeError("Amount must be a number")
+          .min(0, "Must be positive")
           .required("Required"),
         keyVals: Yup.array().of(
           Yup.object().shape({

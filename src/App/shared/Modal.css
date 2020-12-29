@@ -49,7 +49,7 @@
   border-top-left-radius: 4px;
 }
 .modal-container .modal-header.title--danger {
-  background-color: #d9543d;
+  background-color: var(--warn);
 }
 .modal-container .modal-header > .title {
   flex: 1;
