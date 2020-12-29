@@ -20,7 +20,7 @@ const Details = ({ selected: stock, onItemUpdated }) => {
           <div>name: {name}</div>
           <div>magic number: {NumToWordsInt(mnumber)}</div>
           <div>
-            keyVals:
+            <hr/>
             {keyVals.map(({ key, val }) => (
               <div key={key}>
                 {key}: {val}
