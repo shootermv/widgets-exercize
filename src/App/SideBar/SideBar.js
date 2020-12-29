@@ -7,7 +7,7 @@ import SideBarItem from "./SideBarItem/SideBarItem";
 
 
 const Sidebar = ({
-  stocks,
+  widgets,
   onSelect,
   selected,
   deleteStock,
@@ -22,7 +22,7 @@ const Sidebar = ({
   return (
     <aside>
       <ul>
-        {stocks.map((widget) => (
+        {widgets.map((widget) => (
           <SideBarItem {...{ widget, setEditItem, onSelect, selected, setDeltItem }} />
         ))}
       </ul>

@@ -6,53 +6,54 @@ import fetchStocks from "../api/fetchStocks";
 import { v4 as uuidv4 } from "uuid";
 
 const App = () => {
-  const [stocks, setStocks] = useState([]);
-  const [selectedStock, setSelectedStock] = useState(null);
-  function deletStock(_id) {
-    setStocks(stocks.filter(({ id }) => _id !== id));
+  const [widgets, setWidgets] = useState([]);
+  const [selectedWidget, setSelectedWidget] = useState(null);
+  const deleteWidget = (_id) => {
+    setWidgets(widgets.filter(({ id }) => _id !== id));
   }
-  function onItemUpdated(updatedItem) {
-    setStocks(
+  const onItemUpdated = (updatedItem) => {
+    setWidgets(
       updatedItem.id === "new"
-        ? [...stocks, { ...updatedItem, id: uuidv4() }]
-        : stocks.map((item) =>
+        ? [...widgets, { ...updatedItem, id: uuidv4() }]
+        : widgets.map((item) =>
             updatedItem.id !== item.id ? item : updatedItem
           )
     );
 
-    if (selectedStock.id === updatedItem.id) {
+    if (selectedWidget.id === updatedItem.id) {
       // must update details if currently selected
-      setSelectedStock(updatedItem);
+      setSelectedWidget(updatedItem);
     }
   }
 
   useEffect(() => {
     fetchStocks().then((data) => {
-      setStocks(data);
+      setWidgets(data);
     });
   }, []);
 
   useEffect(() => {
-    if (!stocks.length) {
-      setSelectedStock(null)
+    if (!widgets.length) {
+      setSelectedWidget(null)
       return;
     }
-    setSelectedStock(stocks[stocks.length - 1]);
-  }, [stocks.length]);
+    setSelectedWidget(widgets[widgets.length - 1]);
+  }, [widgets.length]);
+
   return (
     <div className="App">
-      {stocks.length ? (
+      {widgets.length ? (
         <Sidebar
-          stocks={stocks}
-          onSelect={setSelectedStock}
-          selected={selectedStock?.name}
-          deleteStock={deletStock}
+          widgets={widgets}
+          onSelect={setSelectedWidget}
+          selected={selectedWidget?.name}
+          deleteStock={deleteWidget}
           onItemUpdated={onItemUpdated}
         />
       ) : (
         <aside>Loading...</aside>
       )}
-      <Deatils selected={selectedStock} onItemUpdated={onItemUpdated} />
+      <Deatils selected={selectedWidget} onItemUpdated={onItemUpdated} />
     </div>
   );
 };
