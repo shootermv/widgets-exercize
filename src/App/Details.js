@@ -4,11 +4,11 @@ import EditModal from "./EditModal";
 import "./Details.css";
 
 import { NumToWordsInt } from "../api/utils";
-const Details = ({ selected: stock, onItemUpdated }) => {
+const Details = ({ selected: widget, onItemUpdated }) => {
   const [editItem, setEditItem] = useState(null);
 
-  if (!stock) return <main>Select some stock</main>;
-  const { name, mnumber, id, keyVals } = stock;
+  if (!widget) return <main>Select some widget</main>;
+  const { name, mnumber, id, keyVals } = widget;
   const onEditDone = (updatedItem) => {
     setEditItem(null);
     onItemUpdated(updatedItem);
@@ -29,7 +29,7 @@ const Details = ({ selected: stock, onItemUpdated }) => {
           </div>
         </section>
         <div>
-          <button onClick={() => setEditItem(stock)}>edit</button>
+          <button onClick={() => setEditItem(widget)}>edit</button>
           <EditModal
             editItem={editItem}
             onEditDone={onEditDone}
