@@ -30,13 +30,11 @@ const Details = ({ selected: stock, onItemUpdated }) => {
         </section>
         <div>
           <button onClick={() => setEditItem(stock)}>edit</button>
-          {editItem && (
-            <EditModal
-              editItem={editItem}
-              onEditDone={onEditDone}
-              closeMe={() => setEditItem(null)}
-            />
-          )}
+          <EditModal
+            editItem={editItem}
+            onEditDone={onEditDone}
+            closeMe={() => setEditItem(null)}
+          />
         </div>
       </>
     </main>

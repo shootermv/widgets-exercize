@@ -35,27 +35,29 @@ const Sidebar = ({
         ))}
       </ul>
       <div className="add-btn-wrap">
-        <button onClick={() => setEditItem({ id: "new", name: "", mnumber: 0, keyVals: []})}>
+        <button
+          onClick={() =>
+            setEditItem({ id: "new", name: "", mnumber: 0, keyVals: [] })
+          }
+        >
           add
         </button>
       </div>
-      {editItem && (
-        <EditModal
-          editItem={editItem}
-          onEditDone={onEditDone}
-          closeMe={() => setEditItem(null)}
-        />
-      )}
-      {deltItem && (
-        <DeleteModal
-          deltItem={deltItem}
-          onDeleteDone={id => {
-            deleteStock(id);
-            setDeltItem(null);
-          }}
-          closeMe={() => setDeltItem(null)}
-        />
-      )}
+
+      <EditModal
+        editItem={editItem}
+        onEditDone={onEditDone}
+        closeMe={() => setEditItem(null)}
+      />
+
+      <DeleteModal
+        deltItem={deltItem}
+        onDeleteDone={(id) => {
+          deleteStock(id);
+          setDeltItem(null);
+        }}
+        closeMe={() => setDeltItem(null)}
+      />
     </aside>
   );
 };
