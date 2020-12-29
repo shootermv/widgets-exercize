@@ -1,6 +1,6 @@
 import React from "react";
-import Modal from "./shared/Modal";
-import AddEditForm from "./AddEditForm";
+import Modal from "../shared/Modal";
+import AddEditForm from "../AddEditForm/AddEditForm";
 
 const EditModal = ({ editItem, onEditDone, closeMe }) => {
   return (

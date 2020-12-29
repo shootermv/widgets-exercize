@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import Modal from "./shared/Modal";
+import Modal from "../shared/Modal";
 
 const DeleteModal = ({ deltItem, onDeleteDone, closeMe }) => {
   return (

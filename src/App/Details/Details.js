@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-import EditModal from "./EditModal";
+import EditModal from "../Modals/EditModal";
 import "./Details.css";
 
-import { NumToWordsInt } from "../api/utils";
+import { NumToWordsInt } from "../../api/utils";
 const Details = ({ selected: widget, onItemUpdated }) => {
   const [editItem, setEditItem] = useState(null);
 

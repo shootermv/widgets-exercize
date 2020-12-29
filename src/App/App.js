@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import Deatils from "./Details";
-import Sidebar from "./SideBar";
+import Deatils from "./Details/Details";
+import Sidebar from "./SideBar/SideBar";
 import fetchStocks from "../api/fetchStocks";
 import { v4 as uuidv4 } from "uuid";
 

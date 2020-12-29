@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./SideBar.css";
 
-import EditModal from "./EditModal";
-import DeleteModal from "./DeleteModal";
+import EditModal from "../Modals/EditModal";
+import DeleteModal from "../Modals/DeleteModal";
 const Sidebar = ({
   stocks,
   onSelect,

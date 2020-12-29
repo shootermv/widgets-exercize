@@ -1,7 +1,7 @@
 import React from "react";
 import * as Yup from "yup";
 import { Field, FieldArray, Formik, Form, ErrorMessage } from "formik";
-import TextInput from "./shared/TextInput";
+import TextInput from "../shared/TextInput";
 const AddEditForm = ({ editItem, onEditDone, onCancel }) => {
   const { name, mnumber, id, keyVals } = editItem;
 
