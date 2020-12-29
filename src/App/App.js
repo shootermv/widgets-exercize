@@ -3,6 +3,8 @@ import "./App.css";
 import Deatils from "./Details";
 import Sidebar from "./SideBar";
 import fetchStocks from "../api/fetchStocks";
+import { v4 as uuidv4 } from "uuid";
+
 const App = () => {
   const [stocks, setStocks] = useState([]);
   const [selectedStock, setSelectedStock] = useState(null);
@@ -11,8 +13,13 @@ const App = () => {
   }
   function onItemUpdated(updatedItem) {
     setStocks(
-      stocks.map((item) => (updatedItem.id !== item.id ? item : updatedItem))
+      updatedItem.id === "new"
+        ? [...stocks, { ...updatedItem, id: uuidv4() }]
+        : stocks.map((item) =>
+            updatedItem.id !== item.id ? item : updatedItem
+          )
     );
+
     if (selectedStock.id === updatedItem.id) {
       // must update details if currently selected
       setSelectedStock(updatedItem);
