@@ -33,7 +33,10 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    if (!stocks.length) return;
+    if (!stocks.length) {
+      setSelectedStock(null)
+      return;
+    }
     setSelectedStock(stocks[stocks.length - 1]);
   }, [stocks.length]);
   return (

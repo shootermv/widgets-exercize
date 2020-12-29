@@ -1,7 +1,9 @@
 :root {
   --primary-bgr: #4d3dd9;
+  --primary-bgr-darker: #481499;
   --ok: green;
   --warn: #d9543d;
+  --error: red;
 }
 html,
 body {
@@ -28,7 +30,7 @@ main section {
 }
 /* shared */
 form span, .error {
-  color:red;
+  color: var(--error);
 }
 .button--ok {
   background: var(--ok);

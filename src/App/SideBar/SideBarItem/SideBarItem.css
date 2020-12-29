@@ -1,0 +1,25 @@
+.sidebar__item .sidebar__item__nav  {
+    display: none;
+}
+
+.sidebar__item:hover .sidebar__item__nav  {
+    display: block;
+    position: absolute;
+    right: 10px;
+}
+
+.sidebar__item__nav button {
+    color: #fff;
+    text-shadow: none;
+    padding: 3px 6px;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 3px;
+    border: none;
+}
+
+.sidebar__item__nav .edit__btn {
+    font-size: 0.5em;
+    padding: 0.35em ;
+}

@@ -3,6 +3,9 @@ import "./SideBar.css";
 
 import EditModal from "../Modals/EditModal";
 import DeleteModal from "../Modals/DeleteModal";
+import SideBarItem from "./SideBarItem/SideBarItem";
+
+
 const Sidebar = ({
   stocks,
   onSelect,
@@ -19,19 +22,8 @@ const Sidebar = ({
   return (
     <aside>
       <ul>
-        {stocks.map((stock) => (
-          <li
-            key={stock.name}
-            className={stock.name === selected ? "selected" : ""}
-          >
-            <div className="txt" onClick={() => onSelect(stock)}>
-              {stock.name}
-            </div>
-            <nav>
-              <button onClick={() => setEditItem(stock)}>e</button>
-              <button onClick={() => setDeltItem(stock)}>x</button>
-            </nav>
-          </li>
+        {stocks.map((widget) => (
+          <SideBarItem {...{ widget, setEditItem, onSelect, selected, setDeltItem }} />
         ))}
       </ul>
       <div className="add-btn-wrap">

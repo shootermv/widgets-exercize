@@ -60,12 +60,10 @@
   text-shadow: none;
   padding: 3px 6px;
   background: none;
-  border: none;
   outline: none;
   cursor: pointer;
   border-radius: 3px;
   border: none;
-  box-shadow: none;
 }
 
 .modal-container .modal-header > button:hover {

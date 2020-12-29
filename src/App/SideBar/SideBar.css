@@ -2,24 +2,27 @@ aside {
   display: flex;
   flex-direction: column;
   min-width: 170px;
-  background: var(--primary-bgr);;
+  background: var(--primary-bgr);
   padding: 10px;
+  color: white;
 }
-ul,
-li {
+
+aside li {
   list-style-type: none;
-  padding: 2px 0;
+  padding: 12px ;
   text-align: left;
   cursor: pointer;
+  position: relative;
 }
 
 li.selected {
-  color: white;
-  font-weight: bold;
+  background: var(--primary-bgr-darker);
+  border-radius: 4px;
 }
 
 aside ul {
   flex: 1;
+  padding: 0;
 }
 aside li {
   display: flex;
@@ -27,5 +30,4 @@ aside li {
 aside li .txt {
   flex: 1;
 }
-aside .add-btn-wrap {
-}
+
