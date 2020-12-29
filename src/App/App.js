@@ -26,7 +26,8 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    setSelectedStock(stocks[0]);
+    if (!stocks.length) return;
+    setSelectedStock(stocks[stocks.length - 1]);
   }, [stocks.length]);
   return (
     <div className="App">
