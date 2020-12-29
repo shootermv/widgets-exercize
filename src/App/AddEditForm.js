@@ -11,9 +11,12 @@ const AddEditForm = ({ editItem, onEditDone, onCancel }) => {
         name: Yup.string()
           .min(3, "Must have at least 3 characters")
           .required("Required"),
+        mnumber: Yup.number()
+          .typeError('Amount must be a number')
+          .required("Required"),  
         keyVals: Yup.array().of(
           Yup.object().shape({
-            key: Yup.string().min(4, "too short").required("Required"), // these constraints take precedence
+            key: Yup.string().min(3, "too short").required("Required"), // these constraints take precedence
             val: Yup.string().min(3, "too short").required("Required") // these constraints take precedence
           })
         )
@@ -50,7 +53,7 @@ const AddEditForm = ({ editItem, onEditDone, onCancel }) => {
                       </div>
                     ))}
 
-                  <button type="button" onClick={() => arrayHelpers.push("")}>
+                  <button type="button" onClick={() => arrayHelpers.push({key:'', val:''})}>
                     Add a keyval
                   </button>
                 </div>
