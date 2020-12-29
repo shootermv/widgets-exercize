@@ -9,10 +9,10 @@ const Details = ({ selected: stock, onItemUpdated }) => {
 
   if (!stock) return <main>Select some stock</main>;
   const { name, mnumber, id, keyVals } = stock;
-  const onEditDone = updatedItem => {
+  const onEditDone = (updatedItem) => {
     setEditItem(null);
     onItemUpdated(updatedItem);
-  }
+  };
   return (
     <main>
       <>
@@ -31,7 +31,11 @@ const Details = ({ selected: stock, onItemUpdated }) => {
         <div>
           <button onClick={() => setEditItem(stock)}>edit</button>
           {editItem && (
-            <EditModal editItem={editItem} onEditDone={onEditDone} closeMe={() => setEditItem(null)}/>
+            <EditModal
+              editItem={editItem}
+              onEditDone={onEditDone}
+              closeMe={() => setEditItem(null)}
+            />
           )}
         </div>
       </>
