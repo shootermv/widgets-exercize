@@ -1,3 +1,8 @@
+:root {
+  --primary-bgr: #4d3dd9;
+  --ok: green;
+
+}
 html,
 body {
   padding: 0;
@@ -20,4 +25,12 @@ main {
 main section {
   flex: 1;
   text-align: left;
+}
+/* shared */
+form span, .error {
+  color:red;
+}
+.button--ok {
+  background:green;
+  color: #fff;
 }

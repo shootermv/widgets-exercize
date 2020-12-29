@@ -1,6 +1,7 @@
 import React from "react";
 import * as Yup from "yup";
 import { Field, FieldArray, Formik, Form, ErrorMessage } from "formik";
+import TextInput from "./shared/TextInput";
 const AddEditForm = ({ editItem, onEditDone, onCancel }) => {
   const { name, mnumber, id, keyVals } = editItem;
 
@@ -12,27 +13,33 @@ const AddEditForm = ({ editItem, onEditDone, onCancel }) => {
           .min(3, "Must have at least 3 characters")
           .required("Required"),
         mnumber: Yup.number()
-          .typeError('Amount must be a number')
-          .required("Required"),  
+          .typeError("Amount must be a number")
+          .required("Required"),
         keyVals: Yup.array().of(
           Yup.object().shape({
             key: Yup.string().min(3, "too short").required("Required"), // these constraints take precedence
-            val: Yup.string().min(3, "too short").required("Required") // these constraints take precedence
+            val: Yup.string().min(3, "too short").required("Required"), // these constraints take precedence
           })
-        )
+        ),
       })}
       onSubmit={onEditDone}
     >
       {({ values }) => (
         <Form>
           <section className="modal-body">
-            <label htmlFor="name">Name</label>
-            <Field name={`name`} />
-            <ErrorMessage name={`name`} />
-            <label htmlFor="mnumber">Magic</label>
-            <Field name={`mnumber`} />
-            <ErrorMessage name={`mnumber`} />
-            <h2>keyVals</h2>
+            <TextInput
+              label="Name"
+              name="name"
+              type="text"
+              placeholder="Name"
+            />
+            <TextInput
+              label="Magic Number"
+              name="mnumber"
+              type="text"
+              placeholder="Magic Number"
+            />
+            <hr/>
             <FieldArray
               name="keyVals"
               render={(arrayHelpers) => (
@@ -41,9 +48,15 @@ const AddEditForm = ({ editItem, onEditDone, onCancel }) => {
                     values.keyVals.map(({ key, val }, index) => (
                       <div className="keyval-row" key={index}>
                         <Field name={`keyVals.${index}.key`} />
-                        <ErrorMessage name={`keyVals.${index}.key`} />
+                        <ErrorMessage
+                          name={`keyVals.${index}.key`}
+                          component="span"
+                        />
                         <Field name={`keyVals.${index}.val`} />
-                        <ErrorMessage name={`keyVals.${index}.val`} />
+                        <ErrorMessage
+                          name={`keyVals.${index}.val`}
+                          component="span"
+                        />
                         <button
                           type="button"
                           onClick={() => arrayHelpers.remove(index)} // remove a friend from the list
@@ -53,7 +66,10 @@ const AddEditForm = ({ editItem, onEditDone, onCancel }) => {
                       </div>
                     ))}
 
-                  <button type="button" onClick={() => arrayHelpers.push({key:'', val:''})}>
+                  <button
+                    type="button"
+                    onClick={() => arrayHelpers.push({ key: "", val: "" })}
+                  >
                     Add a keyval
                   </button>
                 </div>
@@ -61,8 +77,12 @@ const AddEditForm = ({ editItem, onEditDone, onCancel }) => {
             />
           </section>
           <footer className="modal-footer">
-            <button type="submit" className="footer__button button--ok">Submit</button>
-            <button className="footer__button" onClick={onCancel}>cancel</button>
+            <button type="submit" className="footer__button button--ok">
+              Save
+            </button>
+            <button className="footer__button" onClick={onCancel}>
+              cancel
+            </button>
           </footer>
         </Form>
       )}

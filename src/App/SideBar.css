@@ -2,7 +2,7 @@ aside {
   display: flex;
   flex-direction: column;
   min-width: 170px;
-  background: red;
+  background: var(--primary-bgr);;
   padding: 10px;
 }
 ul,

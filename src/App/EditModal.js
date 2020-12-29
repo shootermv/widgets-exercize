@@ -7,7 +7,7 @@ const EditModal = ({ editItem, onEditDone, closeMe }) => {
     <>
       {editItem && (
         <Modal>
-          <header className="modal-header title--danger">
+          <header className="modal-header">
             <div className="title">Edit Item: <b>{editItem.name}</b> </div>
             <button onClick={closeMe}>x</button>
           </header>
