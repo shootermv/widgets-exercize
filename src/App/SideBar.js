@@ -3,9 +3,13 @@ import "./SideBar.css";
 
 import EditModal from "./EditModal";
 import DeleteModal from "./DeleteModal";
-const Sidebar = ({ stocks, select, selected, deleteStock }) => {
+const Sidebar = ({ stocks, onSelect, selected, deleteStock,  onItemUpdated}) => {
   const [deltItem, setDeltItem] = useState(null);
   const [editItem, setEditItem] = useState(null);
+  const onEditDone = updatedItem => {
+    setEditItem(null);
+    onItemUpdated(updatedItem);
+  }
   return (
     <aside>
       <ul>
@@ -14,7 +18,7 @@ const Sidebar = ({ stocks, select, selected, deleteStock }) => {
             key={stock.name}
             className={stock.name === selected ? "selected" : ""}
           >
-            <div className="txt" onClick={() => select(stock)}>
+            <div className="txt" onClick={() => onSelect(stock)}>
               {stock.name}
             </div>
             <nav>
@@ -29,7 +33,7 @@ const Sidebar = ({ stocks, select, selected, deleteStock }) => {
           add
         </button>
       </div>
-      {editItem && <EditModal editItem={editItem} setEditItem={setEditItem} />}
+      {editItem && <EditModal editItem={editItem} onEditDone={onEditDone} closeMe={() => setEditItem(null)}/>}
       {deltItem && (
         <DeleteModal
           deltItem={deltItem}

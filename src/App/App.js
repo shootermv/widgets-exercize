@@ -10,7 +10,13 @@ const App = () => {
     setStocks(stocks.filter(({ id }) => _id !== id));
   }
   function onItemUpdated(updatedItem) {
-    setStocks(stocks.map((item) => updatedItem.id !== item.id ? item : updatedItem ));
+    setStocks(
+      stocks.map((item) => (updatedItem.id !== item.id ? item : updatedItem))
+    );
+    if (selectedStock.id === updatedItem.id) {
+      // must update details if currently selected
+      setSelectedStock(updatedItem);
+    }
   }
 
   useEffect(() => {
@@ -27,9 +33,10 @@ const App = () => {
       {stocks.length ? (
         <Sidebar
           stocks={stocks}
-          select={setSelectedStock}
+          onSelect={setSelectedStock}
           selected={selectedStock?.name}
           deleteStock={deletStock}
+          onItemUpdated={onItemUpdated}
         />
       ) : (
         <aside>Loading...</aside>
