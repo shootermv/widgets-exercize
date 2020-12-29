@@ -1,0 +1,31 @@
+aside {
+  display: flex;
+  flex-direction: column;
+  min-width: 170px;
+  background: red;
+  padding: 10px;
+}
+ul,
+li {
+  list-style-type: none;
+  padding: 2px 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+li.selected {
+  color: white;
+  font-weight: bold;
+}
+
+aside ul {
+  flex: 1;
+}
+aside li {
+  display: flex;
+}
+aside li .txt {
+  flex: 1;
+}
+aside .add-btn-wrap {
+}
