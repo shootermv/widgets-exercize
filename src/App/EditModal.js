@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-
+import React from "react";
 import Modal from "./shared/Modal";
 import AddEditForm from "./AddEditForm";
+
 const EditModal = ({ editItem, onEditDone, closeMe }) => {
   return (
     <>

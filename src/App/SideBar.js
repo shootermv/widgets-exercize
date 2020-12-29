@@ -49,8 +49,11 @@ const Sidebar = ({
       {deltItem && (
         <DeleteModal
           deltItem={deltItem}
-          setDeltItem={setDeltItem}
-          deleteStock={deleteStock}
+          onDeleteDone={id => {
+            deleteStock(id);
+            setDeltItem(null);
+          }}
+          closeMe={() => setDeltItem(null)}
         />
       )}
     </aside>
