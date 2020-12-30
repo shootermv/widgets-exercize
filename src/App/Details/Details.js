@@ -17,12 +17,13 @@ const Details = ({ selected: widget, onItemUpdated }) => {
     <main>
       <>
         <section>
-          <div>name: {name}</div>
-          <div>magic number: {NumToWordsInt(mnumber)}</div>
+          <div><b>name:</b> {name}</div>
+          <div><b>magic number:</b> {NumToWordsInt(mnumber)}</div>
           <div>
+            <h4>Key Value Pairs</h4>
             <hr/>
-            {keyVals.map(({ key, val }) => (
-              <div key={key}>
+            {keyVals.map(({ id, key, val }) => (
+              <div key={id}>
                 {key}: {val}
               </div>
             ))}

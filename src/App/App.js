@@ -23,7 +23,7 @@ const App = () => {
           )
     );
 
-    if (selectedWidget.id === updatedItem.id) {
+    if (selectedWidget?.id === updatedItem.id) {
       // must update details of currently selected
       setSelectedWidget(updatedItem);
     }
@@ -48,7 +48,7 @@ const App = () => {
   return (
     <div className="App">
       {loading && <aside>Loading...</aside>}
-      {!!widgets.length && (
+      {!loading && (
         <Sidebar
           widgets={widgets}
           onSelect={setSelectedWidget}
@@ -57,7 +57,7 @@ const App = () => {
           onItemUpdated={onItemUpdated}
         />
       )}
-      {!loading && widgets.length === 0 && <aside>No widgets yet...</aside>}
+      
       <Deatils selected={selectedWidget} onItemUpdated={onItemUpdated} />
     </div>
   );
