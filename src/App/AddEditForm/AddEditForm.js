@@ -52,15 +52,15 @@ const AddEditForm = ({ editItem, onEditDone, onCancel }) => {
                 <div>
                   {values.keyVals &&
                     values.keyVals.map(({ id, key, val }, index) => (
-                      <div className="keyval--row" key={id} data-id={id}>
-                        <div className="keyval--row--cell">
+                      <div className="keyval__row" key={id} data-id={id}>
+                        <div className="keyval__row__cell">
                           <Field name={`keyVals.${index}.key`} />
                           <ErrorMessage
                             name={`keyVals.${index}.key`}
                             component="span"
                           />
                         </div>
-                        <div className="keyval--row--cell">
+                        <div className="keyval__row__cell">
                           <Field name={`keyVals.${index}.val`} />
                           <ErrorMessage
                             name={`keyVals.${index}.val`}
