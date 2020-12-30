@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import Modal from "../shared/Modal";
 
@@ -12,9 +12,9 @@ const DeleteModal = ({ deltItem, onDeleteDone, closeMe }) => {
             <button onClick={closeMe}>x</button>
           </header>
           <section className="modal-body">
-            <h4>
-              You are about to delete <em>{deltItem.name}</em>
-            </h4>
+           
+              You are about to delete <b>{deltItem.name}</b>
+            
           </section>
           <footer className="modal-footer">
             <button
@@ -29,7 +29,7 @@ const DeleteModal = ({ deltItem, onDeleteDone, closeMe }) => {
               className="footer__button"
               onClick={closeMe}
             >
-              cancel
+              Cancel
             </button>
           </footer>
         </Modal>
