@@ -41,7 +41,7 @@ form span, .error {
   background: var(--warn);
   color: var(--btn-primary-color);
 }
-.round-button {
+.button--round {
   background: var(--primary-bgr-darker);
   border-radius: 50%;
   color: var(--btn-primary-color);
@@ -53,7 +53,13 @@ form span, .error {
   border: none;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.round-button:hover {
+.button--round.small {
+  height: 24px;
+  width: 24px; 
+  font-size: 1em;
+  box-shadow: none;
+}
+.button--round:hover {
   transition: opacity 0.2s ease-in;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px;
 }

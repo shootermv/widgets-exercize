@@ -75,15 +75,16 @@ const AddEditForm = ({ editItem, onEditDone, onCancel }) => {
                         </button>
                       </div>
                     ))}
-
-                  <button
-                    type="button"
-                    onClick={() =>
-                      arrayHelpers.push({ id: uuidv4(), key: "", val: "" })
-                    }
-                  >
-                    +
-                  </button>
+                  <div className="add__button__wrap">
+                    <button
+                      className="button--round small"
+                      onClick={() =>
+                        arrayHelpers.push({ id: uuidv4(), key: "", val: "" })
+                      }
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
               )}
             />
