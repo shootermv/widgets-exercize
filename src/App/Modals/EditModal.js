@@ -6,7 +6,7 @@ const EditModal = ({ editItem, onEditDone, closeMe }) => {
   return (
     <>
       {editItem && (
-        <Modal>
+        <Modal closeMe={closeMe}>
           <header className="modal-header">
             <div className="title">Edit Item: <b>{editItem.name}</b> </div>
             <button onClick={closeMe}>x</button>

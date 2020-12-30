@@ -6,7 +6,7 @@ const DeleteModal = ({ deltItem, onDeleteDone, closeMe }) => {
   return (
     <>
       {deltItem && (
-        <Modal>
+        <Modal closeMe={closeMe}>
           <header className="modal-header title--danger">
             <div className="title">are you sure?</div>
             <button onClick={closeMe}>x</button>
