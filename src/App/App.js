@@ -6,11 +6,14 @@ import fetchStocks from "../api/fetchWdigets";
 import { v4 as uuidv4 } from "uuid";
 
 const App = () => {
+  const [loading, setLoading] = useState(false);
   const [widgets, setWidgets] = useState([]);
   const [selectedWidget, setSelectedWidget] = useState(null);
+
   const deleteWidget = (_id) => {
     setWidgets(widgets.filter(({ id }) => _id !== id));
   }
+  
   const onItemUpdated = (updatedItem) => {
     setWidgets(
       updatedItem.id === "new"
@@ -21,14 +24,16 @@ const App = () => {
     );
 
     if (selectedWidget.id === updatedItem.id) {
-      // must update details if currently selected
+      // must update details of currently selected
       setSelectedWidget(updatedItem);
     }
   }
 
   useEffect(() => {
+    setLoading(true)
     fetchStocks().then((data) => {
       setWidgets(data);
+      setLoading(false);
     });
   }, []);
 
@@ -42,7 +47,8 @@ const App = () => {
 
   return (
     <div className="App">
-      {widgets.length ? (
+      {loading && <aside>Loading...</aside>}
+      {!!widgets.length && (
         <Sidebar
           widgets={widgets}
           onSelect={setSelectedWidget}
@@ -50,8 +56,6 @@ const App = () => {
           deleteStock={deleteWidget}
           onItemUpdated={onItemUpdated}
         />
-      ) : (
-        <aside>Loading...</aside>
       )}
       <Deatils selected={selectedWidget} onItemUpdated={onItemUpdated} />
     </div>
