@@ -13,7 +13,7 @@ const SideBarItem = ({
       {widget.name}
     </div>
     <nav className="sidebar__item__nav">
-      <button className="edit__btn" onClick={() => setEditItem(widget)}>✏️</button>
+      <button  onClick={() => setEditItem(widget)}><span className="btn-emoji">✏️</span></button>
       <button onClick={() => setDeltItem(widget)}>x</button>
     </nav>
   </li>
