@@ -2,6 +2,10 @@ import React from "react";
 import * as Yup from "yup";
 import { Field, FieldArray, Formik, Form, ErrorMessage } from "formik";
 import TextInput from "../shared/TextInput";
+
+import "./AddEditForm.css"
+
+import { v4 as uuidv4 } from "uuid";
 const AddEditForm = ({ editItem, onEditDone, onCancel }) => {
   const { name, mnumber, id, keyVals } = editItem;
 
@@ -40,14 +44,15 @@ const AddEditForm = ({ editItem, onEditDone, onCancel }) => {
               type="text"
               placeholder="Magic Number"
             />
+            <h4>key-value pairs</h4>
             <hr/>
             <FieldArray
               name="keyVals"
               render={(arrayHelpers) => (
                 <div>
                   {values.keyVals &&
-                    values.keyVals.map(({ key, val }, index) => (
-                      <div className="keyval-row" key={index}>
+                    values.keyVals.map(({ id, key, val }, index) => (
+                      <div className="keyval-row" key={id} data-id={id}>
                         <Field name={`keyVals.${index}.key`} />
                         <ErrorMessage
                           name={`keyVals.${index}.key`}
@@ -69,9 +74,9 @@ const AddEditForm = ({ editItem, onEditDone, onCancel }) => {
 
                   <button
                     type="button"
-                    onClick={() => arrayHelpers.push({ key: "", val: "" })}
+                    onClick={() => arrayHelpers.push({ id: uuidv4(), key: "", val: "" })}
                   >
-                    Add a keyval
+                    +
                   </button>
                 </div>
               )}

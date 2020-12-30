@@ -23,7 +23,7 @@ const Sidebar = ({
     <aside>
       <ul>
         {widgets.map((widget) => (
-          <SideBarItem {...{ widget, setEditItem, onSelect, selected, setDeltItem }} />
+          <SideBarItem key={widget.id} {...{ widget, setEditItem, onSelect, selected, setDeltItem }} />
         ))}
       </ul>
       <div className="add-btn-wrap">

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import Deatils from "./Details/Details";
 import Sidebar from "./SideBar/SideBar";
-import fetchStocks from "../api/fetchStocks";
+import fetchStocks from "../api/fetchWdigets";
 import { v4 as uuidv4 } from "uuid";
 
 const App = () => {
