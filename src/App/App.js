@@ -13,7 +13,7 @@ const App = () => {
   const deleteWidget = (_id) => {
     setWidgets(widgets.filter(({ id }) => _id !== id));
   }
-  
+
   const onItemUpdated = (updatedItem) => {
     setWidgets(
       updatedItem.id === "new"
@@ -57,6 +57,7 @@ const App = () => {
           onItemUpdated={onItemUpdated}
         />
       )}
+      {!loading && widgets.length === 0 && <aside>No widgets yet...</aside>}
       <Deatils selected={selectedWidget} onItemUpdated={onItemUpdated} />
     </div>
   );

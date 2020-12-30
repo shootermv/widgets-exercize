@@ -1,7 +1,7 @@
-import { STOCKS } from "./stocksMock";
+import { WIDGETS } from "./widgetsMock";
 
 export default function fetchWidgets() {
   return new Promise((resolve) => {
-    setTimeout(() => resolve(STOCKS), 1000);
+    setTimeout(() => resolve(WIDGETS), 1000);
   });
 }

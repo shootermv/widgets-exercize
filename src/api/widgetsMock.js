@@ -1,4 +1,4 @@
-export const STOCKS = [
+export const WIDGETS = [
   {
     id: "FSCT",
     name: "ForeScout Techno",
