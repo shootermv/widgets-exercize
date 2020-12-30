@@ -30,7 +30,7 @@ const Details = ({ selected: widget, onItemUpdated }) => {
           </div>
         </section>
         <div>
-          <button onClick={() => setEditItem(widget)}>edit</button>
+          <button className="round-button" onClick={() => setEditItem(widget)}><span className="btn-emoji">✏️</span></button>
           <EditModal
             editItem={editItem}
             onEditDone={onEditDone}

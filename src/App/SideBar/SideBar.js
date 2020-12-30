@@ -26,7 +26,7 @@ const Sidebar = ({
         ))}
       </ul>
       <div className="add-btn-wrap">
-        <button
+        <button className="round-button"
           onClick={() =>
             setEditItem({ id: "new", name: "", mnumber: 0, keyVals: [] })
           }

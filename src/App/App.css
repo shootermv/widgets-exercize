@@ -4,6 +4,7 @@
   --ok: green;
   --warn: #d9543d;
   --error: red;
+  --btn-primary-color: #fff;
 }
 html,
 body {
@@ -34,9 +35,31 @@ form span, .error {
 }
 .button--ok {
   background: var(--ok);
-  color: #fff;
+  color: var(--btn-primary-color);
 }
 .button--warn {
   background: var(--warn);
-  color: #fff;
+  color: var(--btn-primary-color);
+}
+.round-button {
+  background: var(--primary-bgr-darker);
+  border-radius: 50%;
+  color: var(--btn-primary-color);
+  height: 40px;
+  width: 40px;
+  font-size: 1.5em;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.round-button:hover {
+  transition: opacity 0.2s ease-in;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px;
+}
+
+.btn-emoji {
+  font-size: 0.5em;
+  position: relative;
+  top: -3px;
 }
