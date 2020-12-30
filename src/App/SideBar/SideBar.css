@@ -24,9 +24,11 @@ aside ul {
   flex: 1;
   padding: 0;
 }
+
 aside li {
   display: flex;
 }
+
 aside li .txt {
   flex: 1;
 }

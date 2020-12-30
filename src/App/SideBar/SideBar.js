@@ -5,7 +5,6 @@ import EditModal from "../Modals/EditModal";
 import DeleteModal from "../Modals/DeleteModal";
 import SideBarItem from "./SideBarItem/SideBarItem";
 
-
 const Sidebar = ({
   widgets,
   onSelect,
@@ -32,7 +31,7 @@ const Sidebar = ({
             setEditItem({ id: "new", name: "", mnumber: 0, keyVals: [] })
           }
         >
-          add
+          +
         </button>
       </div>
 

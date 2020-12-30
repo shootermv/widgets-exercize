@@ -1,4 +1,17 @@
 h4 {
-    padding-bottom: 0em;
-    margin-bottom: 0em;
+  padding-bottom: 0em;
+  margin-bottom: 0em;
+}
+
+.keyval--row {
+  display: flex;
+}
+
+.keyval--row--cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.keyval--row button {
+  max-height: 20px;
 }

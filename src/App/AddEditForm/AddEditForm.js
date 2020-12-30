@@ -3,7 +3,7 @@ import * as Yup from "yup";
 import { Field, FieldArray, Formik, Form, ErrorMessage } from "formik";
 import TextInput from "../shared/TextInput";
 
-import "./AddEditForm.css"
+import "./AddEditForm.css";
 
 import { v4 as uuidv4 } from "uuid";
 const AddEditForm = ({ editItem, onEditDone, onCancel }) => {
@@ -45,24 +45,28 @@ const AddEditForm = ({ editItem, onEditDone, onCancel }) => {
               placeholder="Magic Number"
             />
             <h4>key-value pairs</h4>
-            <hr/>
+            <hr />
             <FieldArray
               name="keyVals"
               render={(arrayHelpers) => (
                 <div>
                   {values.keyVals &&
                     values.keyVals.map(({ id, key, val }, index) => (
-                      <div className="keyval-row" key={id} data-id={id}>
-                        <Field name={`keyVals.${index}.key`} />
-                        <ErrorMessage
-                          name={`keyVals.${index}.key`}
-                          component="span"
-                        />
-                        <Field name={`keyVals.${index}.val`} />
-                        <ErrorMessage
-                          name={`keyVals.${index}.val`}
-                          component="span"
-                        />
+                      <div className="keyval--row" key={id} data-id={id}>
+                        <div className="keyval--row--cell">
+                          <Field name={`keyVals.${index}.key`} />
+                          <ErrorMessage
+                            name={`keyVals.${index}.key`}
+                            component="span"
+                          />
+                        </div>
+                        <div className="keyval--row--cell">
+                          <Field name={`keyVals.${index}.val`} />
+                          <ErrorMessage
+                            name={`keyVals.${index}.val`}
+                            component="span"
+                          />
+                        </div>
                         <button
                           type="button"
                           onClick={() => arrayHelpers.remove(index)} // remove a friend from the list
@@ -74,7 +78,9 @@ const AddEditForm = ({ editItem, onEditDone, onCancel }) => {
 
                   <button
                     type="button"
-                    onClick={() => arrayHelpers.push({ id: uuidv4(), key: "", val: "" })}
+                    onClick={() =>
+                      arrayHelpers.push({ id: uuidv4(), key: "", val: "" })
+                    }
                   >
                     +
                   </button>
