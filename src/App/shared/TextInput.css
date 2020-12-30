@@ -3,5 +3,8 @@
     display: flex;
 }
 .text-input-wrap label {
-    width: 170px;
+    flex: 1;
+}
+.text-input-wrap input {
+    flex: 2;
 }
