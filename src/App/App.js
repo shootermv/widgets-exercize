@@ -12,7 +12,7 @@ const App = () => {
 
   const deleteWidget = (_id) => {
     setWidgets(widgets.filter(({ id }) => _id !== id));
-  }
+  };
 
   const onItemUpdated = (updatedItem) => {
     setWidgets(
@@ -27,10 +27,10 @@ const App = () => {
       // must update details of currently selected
       setSelectedWidget(updatedItem);
     }
-  }
+  };
 
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     fetchWidgets().then((data) => {
       setWidgets(data);
       setLoading(false);
@@ -39,7 +39,7 @@ const App = () => {
 
   useEffect(() => {
     if (!widgets.length) {
-      setSelectedWidget(null)
+      setSelectedWidget(null);
       return;
     }
     setSelectedWidget(widgets[widgets.length - 1]);
@@ -57,7 +57,7 @@ const App = () => {
           onItemUpdated={onItemUpdated}
         />
       )}
-      
+
       <Deatils selected={selectedWidget} onItemUpdated={onItemUpdated} />
     </div>
   );

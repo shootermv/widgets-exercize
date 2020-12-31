@@ -1,51 +1,51 @@
 export const WIDGETS = [
   {
-    id: "FSCT",
-    name: "ForeScout Techno",
-    mnumber: 25,
+    id: "Ninja-ZX10",
+    name: "Ninja ZX10 RR",
+    mnumber: 998,
     keyVals: [
-      { id: "11", key: "1", val: "1" },
-      { id: "12", key: "sass", val: "sass" },
-      { id: "13", key: "sss", val: "csss" },
-      { id: "14", key: "aas", val: "csss" },
-      { id: "15", key: "sasss", val: "bsss" },
-      { id: "16", key: "ssss", val: "bsss" }
+      { id: "11", key: "Capacity", val: "998cc" },
+      { id: "12", key: "Engine", val: "Four Stroke" },
+      { id: "13", key: "Max Power ", val: "150 kW / 204 hp @ 13500 rpm" },
+      { id: "14", key: "Max Torque", val: "115.7 Nm / 84.6 lb-ft @ 11500 rpm" },
+      { id: "15", key: "Transmission", val: "6 speed" }
     ]
   },
   {
-    id: "AAPL",
-    name: "Apple Computers",
-    mnumber: 166,
+    id: "CBR1000RR",
+    name: "CBR 1000 RR",
+    mnumber: 999,
     keyVals: [
-      { id: "21", key: "sss", val: "sss" },
-      { id: "22", key: "sess", val: "swess" },
-      { id: "23", key: "ds", val: "sess" },
-      { id: "24", key: "dds", val: "1sss" },
-      { id: "25", key: "ddds", val: "sesss" }
+      { id: "21", key: "No. of Cylinders", val: "4" },
+      { id: "22", key: "Capacity", val: "999cc" },
+      { id: "23", key: "Max Torque", val: "114 Nm @ 11000 rpm"},
+      { id: "24", key: "Max Power", val: "191.7 PS @ 13000 rpm" },
+      { id: "25", key: "Rear Brake", val: "Disc" }
     ]
   },
   {
-    id: "WIX",
-    name: "Wix",
-    mnumber: 69,
+    id: "YZF-R1",
+    name: "YZF R1",
+    mnumber: 1000,
     keyVals: [
-      { id: "31", key: "aaa", val: "aaa" },
-      { id: "32", key: "1aaa", val: "1aaa" },
-      { id: "33", key: "awaa", val: "aawa" },
+      { id: "31", key: "Max Torque", val: "112.4 Nm @ 11500 rpm" },
+      { id: "32", key: "Fuel Capacity", val: "17 L" },
+      { id: "33", key: "Capacity", val: "998cc" },
       { id: "34", key: "2aaa", val: "aaass" },
       { id: "35", key: "3aaa", val: "aassa" }
     ]
   },
   {
-    id: "MBLY",
-    name: "Mobileye",
-    mnumber: 62,
+    id: "GSX-R 1000",
+    name: "GSX-R 1000",
+    mnumber: 1100,
     keyVals: [
-      { id: "41", key: "0bbb", val: "bbb" },
-      { id: "42", key: "1bbb", val: "rb9b" },
-      { id: "413", key: "2bbb", val: "rbbb" },
-      { id: "44", key: "3bbb", val: "bbrssb" },
-      { id: "45", key: "4bbb", val: "bssbb" },
+      { id: "41", key: "Capacity", val: "998.6" },
+      { id: "42", key: "Lubricatoin", val: "wet sump" },
+      { id: "413", key: "Cooling System", val: "Liqued Cooled" },
+      { id: "44", key: "Exaust", val: "Titanium" },
+      { id: "45", key: "Max Power", val: "148.6 kW / 199.2 hp @ 13200rpm" },
+      
     ]
   }
 ];
