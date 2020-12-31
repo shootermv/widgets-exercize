@@ -17,20 +17,27 @@ const Details = ({ selected: widget, onItemUpdated }) => {
     <main>
       <>
         <section>
-          <div><b>name:</b> {name}</div>
-          <div><b>magic number:</b> {NumToWordsInt(mnumber)}</div>
+          <div className="details__key__val">
+            <label className="details__label">Name:</label> {name}
+          </div>
+          <div className="details__key__val">
+            <label className="details__label">Magic Number:</label>{" "}
+            {NumToWordsInt(mnumber)}
+          </div>
           <div>
             <h4>Key Value Pairs</h4>
-            <hr/>
+            <hr />
             {keyVals.map(({ id, key, val }) => (
-              <div key={id}>
-                {key}: {val}
+              <div key={id} className="details__key__val">
+                <label className="details__label">{key}:</label> {val}
               </div>
             ))}
           </div>
         </section>
         <div>
-          <button className="button--round" onClick={() => setEditItem(widget)}><span className="btn-emoji">✏️</span></button>
+          <button className="button--round" onClick={() => setEditItem(widget)}>
+            <span className="btn-emoji">✏️</span>
+          </button>
           <EditModal
             editItem={editItem}
             onEditDone={onEditDone}
