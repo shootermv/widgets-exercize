@@ -69,7 +69,10 @@ const AddEditForm = ({ editItem, onEditDone, onCancel }) => {
                         </div>
                         <button
                           type="button"
-                          onClick={() => arrayHelpers.remove(index)} // remove a friend from the list
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            arrayHelpers.remove(index);
+                          }} // remove a pair from the list
                         >
                           -
                         </button>
