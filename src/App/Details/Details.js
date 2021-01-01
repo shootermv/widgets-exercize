@@ -15,8 +15,8 @@ const Details = ({ selected: widget, onItemUpdated }) => {
   };
   return (
     <main>
-      <>
-        <section>
+     
+        <section className="card"> 
           <div className="details__key__val">
             <label className="details__label">Name:</label> {name}
           </div>
@@ -34,7 +34,7 @@ const Details = ({ selected: widget, onItemUpdated }) => {
             ))}
           </div>
         </section>
-        <div>
+        <footer>
           <button className="button--round" onClick={() => setEditItem(widget)}>
             <span className="btn-emoji">✏️</span>
           </button>
@@ -43,8 +43,8 @@ const Details = ({ selected: widget, onItemUpdated }) => {
             onEditDone={onEditDone}
             closeMe={() => setEditItem(null)}
           />
-        </div>
-      </>
+        </footer>
+ 
     </main>
   );
 };

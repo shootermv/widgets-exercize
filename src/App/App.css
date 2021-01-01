@@ -5,6 +5,8 @@
   --warn: #d9543d;
   --error: red;
   --btn-primary-color: #fff;
+  --primary-details-bgr: #fff;
+  --primary-main-bgr: #F2F3F5
 }
 html,
 body {
@@ -68,4 +70,9 @@ form span, .error {
   font-size: 0.5em;
   position: relative;
   top: -3px;
+}
+.card {
+  background: var(--primary-details-bgr);
+  padding: 1em;
+  border-radius: 0.3em;
 }

@@ -1,6 +1,7 @@
 main {
+  background :var(--primary-main-bgr);
   flex-direction: column;
-  padding: 2.5em 1em 0.5em;
+  padding: 2.5em 1em 1.2em;
 }
 .details__key__val {
   padding: 5px; 
@@ -9,3 +10,5 @@ main {
   min-width: 150px;
   display: inline-block;
 }
+main footer{ position: relative;}
+main footer button{ position: absolute; top: -30px;}
