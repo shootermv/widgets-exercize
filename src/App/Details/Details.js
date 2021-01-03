@@ -16,7 +16,8 @@ const Details = ({ selected: widget, onItemUpdated }) => {
   return (
     <main>
      
-        <section className="card"> 
+        <section className="bg-white rounded-md shadow-md p-6"> 
+          
           <div className="details__key__val">
             <label className="details__label">Name:</label> {name}
           </div>

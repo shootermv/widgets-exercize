@@ -71,8 +71,3 @@ form span, .error {
   position: relative;
   top: -3px;
 }
-.card {
-  background: var(--primary-details-bgr);
-  padding: 1em;
-  border-radius: 0.3em;
-}

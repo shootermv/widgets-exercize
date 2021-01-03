@@ -44,7 +44,7 @@ const AddEditForm = ({ editItem, onEditDone, onCancel }) => {
               type="text"
               placeholder="Magic Number"
             />
-            <h4>key-value pairs</h4>
+            <div className="text-xl text-black">key-value pairs</div>
             <hr />
             <FieldArray
               name="keyVals"
