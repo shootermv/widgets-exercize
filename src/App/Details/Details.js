@@ -8,7 +8,7 @@ const Details = ({ selected: widget, onItemUpdated }) => {
   const [editItem, setEditItem] = useState(null);
 
   if (!widget) return <main>Select some widget</main>;
-  const { name, mnumber, id, keyVals } = widget;
+  const { name, mnumber, keyVals } = widget;
   const onEditDone = (updatedItem) => {
     setEditItem(null);
     onItemUpdated(updatedItem);
