@@ -7,26 +7,9 @@ aside {
   color: white;
 }
 
-aside li {
-  list-style-type: none;
-  padding: 12px ;
-  text-align: left;
-  cursor: pointer;
-  position: relative;
-}
-
-li.selected {
-  background: var(--primary-bgr-darker);
-  border-radius: 4px;
-}
-
 aside ul {
   flex: 1;
   padding: 0;
-}
-
-aside li {
-  display: flex;
 }
 
 aside li .txt {

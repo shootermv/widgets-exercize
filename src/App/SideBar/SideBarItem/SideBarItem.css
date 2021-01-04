@@ -1,39 +1,49 @@
+.sidebar__item {
+  list-style-type: none;
+  padding: 12px;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+}
+
+.sidebar__item.selected {
+  background: var(--primary-bgr-darker);
+  border-radius: 4px;
+}
 
 /*mobile*/
-.sidebar__item .sidebar__item__nav  button {
-    background-color: rgba(0, 0, 0, 0.4);
+.sidebar__item .sidebar__item__nav button {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 /*desktop - buttons displayed onhover */
-@media only screen and (min-width: 600px) { 
-    .sidebar__item .sidebar__item__nav  {
-        display: none;
-    }
+@media only screen and (min-width: 600px) {
+  .sidebar__item .sidebar__item__nav {
+    display: none;
+  }
 }
 
-
-
-.sidebar__item:hover .sidebar__item__nav  {
-    display: block;
-    position: absolute;
-    right: 10px;
+.sidebar__item:hover .sidebar__item__nav {
+  display: block;
+  position: absolute;
+  right: 10px;
 }
 
 .sidebar__item__nav button {
-    color: #fff;
-    text-shadow: none;
-    padding: 3px 6px;
-    background: none;
-    outline: none;
-    cursor: pointer;
-    border-radius: 3px;
-    border: none;
+  color: #fff;
+  text-shadow: none;
+  padding: 3px 6px;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 3px;
+  border: none;
 }
 
-.sidebar__item__nav button:hover { 
-    background-color: rgba(0, 0, 0, 0.4); 
+.sidebar__item__nav button:hover {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .sidebar__item__nav .edit__btn {
-    font-size: 0.5em;
-    padding: 0.35em ;
+  font-size: 0.5em;
+  padding: 0.35em;
 }
