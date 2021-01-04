@@ -1,5 +1,4 @@
 aside {
-  display: flex;
   flex-direction: column;
   min-width: 170px;
   background: var(--primary-bgr);

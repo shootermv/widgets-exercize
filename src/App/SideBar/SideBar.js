@@ -19,7 +19,7 @@ const Sidebar = ({
     onItemUpdated(updatedItem);
   };
   return (
-    <aside>
+    <aside className="flex">
       <ul>
         {widgets.map((widget) => (
           <SideBarItem key={widget.id} {...{ widget, setEditItem, onSelect, selected, setDeltItem }} />
