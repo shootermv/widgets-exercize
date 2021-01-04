@@ -26,7 +26,7 @@ const Details = ({ selected: widget, onItemUpdated }) => {
             {NumToWordsInt(mnumber)}
           </div>
           <div>
-            <div class="text-xl font-medium text-black">Key Value Pairs</div>
+            <div className="text-xl font-medium text-black">Key Value Pairs</div>
             <hr />
             {keyVals.map(({ id, key, val }) => (
               <div key={id} className="details__key__val">
