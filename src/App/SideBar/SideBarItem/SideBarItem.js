@@ -8,7 +8,7 @@ const SideBarItem = ({
   onSelect,
   selected,
 }) => (
-  <li key={widget.name} className={`flex ${widget.name === selected ? "sidebar__item selected" : "sidebar__item"}`}>
+  <li key={widget.name} className={`flex rounded-md sidebar__item ${widget.name === selected ? "selected" : ""}`}>
     <div className="txt" onClick={() => onSelect(widget)}>
       {widget.name}
     </div>
